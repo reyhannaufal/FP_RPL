@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Receipe extends Model
+class Recipes extends Model
 {
     protected $fillable = [
-        'title', 'description'
+        'title', 'description', 'ingridient',
     ];
 }
