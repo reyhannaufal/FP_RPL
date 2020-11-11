@@ -17,11 +17,7 @@ class CreateRecipesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('description');
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
-                ->references('id')->on('users');
-
+            $table->text('ingridient');
             $table->timestamps();
         });
     }
