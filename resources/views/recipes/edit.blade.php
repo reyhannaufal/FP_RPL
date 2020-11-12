@@ -21,15 +21,18 @@
                 </div>
                 @endif
 
-                <form method="post" action="{{ route('recipe.update',$recipe->id) }}" id="myForm">
-                    {{ csrf_field() }}
-                    {{ method_field('PUT') }}
+                <form method="post" action="{{ route('recipes.update', $recipe->id) }}" id="myForm">
+                    @csrf
+                    @method('PUT')
                     <div class="form-group">
-                        <label for="title">Judul</label> <input type="text" name="title" class="form-control" id="title" value="{{ $recipe->title }}" aria-describedby="title" placeholder="Masukkan Judul Resep"> </div>
+                        <label for="title">Judul</label>
+                        <input type="text" name="title" class="form-control" id="title" value="{{ $recipe->title }}" aria-describedby="title" placeholder="Masukkan Judul Resep"> </div>
                     <div class="form-group">
-                        <label for="description">Deskripsi</label> <input type="text" name="description" class="form-control" id="description" value="{{ $recipe->description }}" aria-describedby="description" placeholder="Masukkan Deskripsi Resep"> </div>
+                        <label for="description">Deskripsi</label>
+                        <input type="text" name="description" class="form-control" id="description" value="{{ $recipe->description }}" aria-describedby="description" placeholder="Masukkan Deskripsi Resep"> </div>
                     <div class="form-group">
-                        <label for="ingridient">Bahan-bahan</label> <input type="text" name="ingridient" class="form-control" id="ingridient" value="{{ $recipe->ingridient }}" aria-describedby="ingridient" placeholder="Masukkan bahan-bahan resep">
+                        <label for="ingridient">Bahan-bahan</label>
+                        <input type="text" name="ingridient" class="form-control" id="ingridient" value="{{ $recipe->ingridient }}" aria-describedby="ingridient" placeholder="Masukkan bahan-bahan resep" />
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

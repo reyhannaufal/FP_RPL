@@ -98,9 +98,10 @@ class RecipesController extends Controller
      * @param  \App\Recipes  $recipes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recipes $recipes)
+    public function destroy($id)
     {
-        $recipes->delete();
+        $recipe = Recipes::find($id);
+        $recipe->delete();
 
         return redirect()->route('recipes.index')
             ->with('succes', 'Recipes deleted succesfully');
