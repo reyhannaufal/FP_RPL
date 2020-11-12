@@ -7,7 +7,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
             <div class="card-header">
-                Edit Buku
+                Edit Makanan
             </div>
             <div class="card-body">
                 @if ($errors->any())
@@ -20,15 +20,16 @@
                     </ul>
                 </div>
                 @endif
-                <form method="post" action="{{ route('recipes.update',$recipes->id) }}" id="myForm">
-                    @csrf
-                    @method('PUT')
+
+                <form method="post" action="{{ route('recipe.update',$recipe->id) }}" id="myForm">
+                    {{ csrf_field() }}
+                    {{ method_field('PUT') }}
                     <div class="form-group">
-                        <label for="title">Judul</label> <input type="text" name="title" class="form-control" id="title" value="{{ $recipes->title }}" aria-describedby="title" placeholder="Masukkan Judul Resep"> </div>
+                        <label for="title">Judul</label> <input type="text" name="title" class="form-control" id="title" value="{{ $recipe->title }}" aria-describedby="title" placeholder="Masukkan Judul Resep"> </div>
                     <div class="form-group">
-                        <label for="writer">Deskripsi</label> <input type="text" name="description" class="form-control" id="description" value="{{ $recipes->writer }}" aria-describedby="writer" placeholder="Masukkan Deskripsi Resep"> </div>
+                        <label for="description">Deskripsi</label> <input type="text" name="description" class="form-control" id="description" value="{{ $recipe->description }}" aria-describedby="description" placeholder="Masukkan Deskripsi Resep"> </div>
                     <div class="form-group">
-                        <label for="publisher">Bahan-bahan</label> <input type="text" name="ingridient" class="form-control" id="ingridient" value="{{ $recipes->publisher }}" aria-describedby="publisher" placeholder="Masukkan bahan-bahan resep">
+                        <label for="ingridient">Bahan-bahan</label> <input type="text" name="ingridient" class="form-control" id="ingridient" value="{{ $recipe->ingridient }}" aria-describedby="ingridient" placeholder="Masukkan bahan-bahan resep">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

@@ -39,17 +39,15 @@
         <td>{{ $recipe->description }}</td>
         <td>{{ $recipe->ingridient }}</td>
         <td>
+
             <form action="{{ route('recipes.destroy',$recipe->id) }}" method="POST">
-
-                <a class="btn btn-info" href="{{ route('recipes.show',$recipe->id) }}">Show</a>
-
-                <a class="btn btn-primary" href="{{ route('recipes.edit',$recipe->id) }}">Edit</a>
-
-                @csrf
-                @method('DELETE')
-
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <a class="btn btn-info" href="{{ route('recipes.show', $recipe->id) }}">Show</a>
+                <a class="btn btn-primary" href="{{ route('recipes.edit', $recipe->id) }}">Edit</a>
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <button type="delete" class="btn btn-danger">Delete</button>
             </form>
+
         </td>
     </tr>
     @endforeach

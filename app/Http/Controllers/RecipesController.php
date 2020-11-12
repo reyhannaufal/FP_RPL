@@ -66,9 +66,9 @@ class RecipesController extends Controller
      * @param  \App\Recipes  $recipes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Recipes $recipes)
+    public function edit(Recipes $recipe)
     {
-        return view('recipes.edit', compact('recipes'));
+        return view('recipes.edit', compact('recipe'));
     }
 
     /**
