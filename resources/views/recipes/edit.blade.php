@@ -22,8 +22,8 @@
                 @endif
 
                 <form method="post" action="{{ route('recipes.update', $recipe->id) }}" id="myForm">
-                    @csrf
-                    @method('PUT')
+                    {{ csrf_field() }}
+                    {{ method_field('PUT') }}
                     <div class="form-group">
                         <label for="title">Judul</label>
                         <input type="text" name="title" class="form-control" id="title" value="{{ $recipe->title }}" aria-describedby="title" placeholder="Masukkan Judul Resep"> </div>

@@ -78,7 +78,7 @@ class RecipesController extends Controller
      * @param  \App\Recipes  $recipes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recipes $recipes)
+    public function update(Request $request, Recipes $recipes, $id)
     {
         $request->validate([
             'title' => 'required',
@@ -86,7 +86,7 @@ class RecipesController extends Controller
             'ingridient' => 'required',
         ]);
 
-        $recipes->update($request->all());
+        $recipes->findOrFail($id)->update($request->all());
 
         return redirect()->route('recipes.index')
             ->with('success', 'Recipes updated successfully.');
