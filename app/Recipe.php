@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Recipes extends Model
+class Recipe extends Model
 {
+    protected $table = 'recipes';
     protected $fillable = [
         'title', 'description', 'ingridient',
     ];
