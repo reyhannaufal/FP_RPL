@@ -7,7 +7,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
             <div class="card-header">
-                Tambah Buku
+                Tambah Resep
             </div>
             <div class="card-body">
                 @if ($errors->any())
@@ -23,11 +23,11 @@
                 <form method="post" action="{{ route('recipes.store') }}" id="myForm">
                     @csrf
                     <div class="form-group">
-                        <label for="title">Judul</label> <input type="text" name="title" class="form-control" id="title" aria-describedby="title" placeholder="Masukkan Judul Buku"> </div>
+                        <label for="title">Judul Resep</label> <input type="text" name="title" class="form-control" id="title" aria-describedby="title" placeholder="Masukkan Judul Resep"> </div>
                     <div class="form-group">
-                        <label for="writer">Penulis</label> <input type="text" name="description" class="form-control" id="description" aria-describedby="description" placeholder="Masukkan Nama Penulis"> </div>
+                        <label for="writer">Deskripsi Resep</label> <input type="text" name="description" class="form-control" id="description" aria-describedby="description" placeholder="Masukkan Deskripsi resep"> </div>
                     <div class="form-group">
-                        <label for="publisher">Penerbit</label> <input type="text" name="ingridient" class="form-control" id="ingridient" aria-describedby="ingridient" placeholder="Masukkan Nama Penerbit">
+                        <label for="publisher">Bahan-Bahan</label> <input type="text" name="ingridient" class="form-control" id="ingridient" aria-describedby="ingridient" placeholder="Masukkan Bahan-Bahan">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
